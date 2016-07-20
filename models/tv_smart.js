@@ -19,12 +19,12 @@ exports.control_tv = function () {
   if (status_tv == 0) {
     status_tv = 1;
     console.log("LIGOU A TV");
-    app.sensors.tv_On_Off.digitalWrite(0);
+    app.sensors.tv_On_Off.digitalWrite(1);
     //sendNumber("ligarTv");
   } else {
     status_tv = 0;
     console.log("DESLIGOU A TV");
-    app.sensors.tv_On_Off.digitalWrite(1);
+    app.sensors.tv_On_Off.digitalWrite(0);
     //sendNumber("desligarTv");
   }
 }
