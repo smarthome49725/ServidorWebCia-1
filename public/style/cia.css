@@ -1,0 +1,740 @@
+/*MENU DA PAGINA*/
+.navbar{
+background-color: #f4f4f4;
+height: 7em;
+box-shadow: 1px 3px 2px 0 rgba(0,0,0,.2);
+}
+
+.logo{
+height: 5em;
+float: left;
+position: relative;
+border-radius: 10em;
+left: 5%;
+top: 0.5em;
+}
+
+/*NOME DO PROJETO na barra titulo do site*/
+.titulo-cia{
+color: #AFAEAE;
+top: 3rem;
+margin: auto;
+left: 20%;
+position: relative;
+text-shadow: white 1.9px 0px;
+}
+
+@media (min-width: 768px){
+.navbar-header {
+float: left;
+position: relative;
+left: 24%;
+}                                                                                                     
+}
+
+/*CORPO DA PAGINA*/
+body{
+background-color: rgba(216, 210, 210, 0.5);
+width: auto;
+height: 630px;
+}
+
+/*PAINEL DAS FUNÇOES (LAMPDA,CORTINA,TEMPERATURA....)*/
+@media screen and (min-width: 768px){
+.container .jumbotron, .container-fluid .jumbotron {
+padding:0;
+}                                                                                                     
+}                                                                                                    
+
+/*CAMPO DAS FUNÇOES LAMPADAS*/
+.campo_funcionalidade{ 
+  position: relative;
+  padding: 0;
+  width: 30%;
+  left: 0%;
+  float: left;
+  box-shadow: 0px 10px 10px 0px hsla(0, 0%, 0%, 0.23);
+  margin: 0% 0% 2.5% 2.5%;
+}                                                                                           
+
+.campo_funcionalidade input{
+width: 60%;
+position: relative;
+left: 14%;
+padding: 0;
+margin: 4%;
+top: -1em;
+z-index: 1;
+outline: none;
+}
+
+.label-button{
+display: block;
+padding: 0.1em;
+font-size: inherit;
+line-height: 3;
+color: #000000;
+white-space: nowrap;
+border-radius: 0;
+margin: 0% 0% 7% 0%;
+position: relative;
+left: 0%;
+width: 100%;
+text-align: center;
+font-weight: 100;
+}
+
+figcaption{
+margin: 0;
+padding: 0%;
+width: 100%;
+border-radius: 1rem;
+position: relative;
+top: -1em;
+}
+
+.modal-content{
+width: 100%;
+position: absolute;
+left: 0%;
+}
+
+.modal-footer {
+padding: 15px;
+text-align: right;
+border-top: 1px solid #e5e5e5;
+width: 100%;
+position: relative;
+left: 0em;
+display: inline-block;
+}
+
+.modal-title {
+margin: 0;
+line-height: 1.42857143;
+text-align: center;
+}
+
+.campo_funcionalidade input:hover{
+  transition: 0.1s;
+  box-shadow: 0px 1px 0px 0px #7B8588;
+  border-radius: 1px;
+}
+
+/*PARTE DO CAMPO DO BOTAO DE CONFIGURAÇOES NA BARRA DE TITULO DO SITE*/
+.navbar-nav{
+height: 3em;
+position: relative;
+top: 7pt;
+border-radius: 5em;
+float: right;
+right: 2%;
+}
+
+.nav>li{
+position: relative;
+display: block;
+left: 10%;
+font-size: 1pc;
+font-weight: 100;
+}
+
+.campo_lamp_all{
+width: 14%;
+margin: 0;
+padding: 0;
+float: right;
+text-align: center;
+position: relative;
+left: -5%;
+}
+
+.campo_lamp_all span{
+position: relative;
+right: 13%;
+padding: 9%;
+}
+
+/**************************************/
+/*CONFIGURAÇAO DA TV, LOCAL DA IMAGEM*/
+.campo_funcionalidade_TV{
+width: 100%;
+position:relative;
+float: none;
+text-align: center;
+left: 0%;
+}
+
+.campo_funcionalidade_TV figure{
+width: 100%;
+}
+
+.campo_funcionalidade_TV figure input{
+  width: 60%;
+  outline: none;
+}
+
+.well{
+	text-align: center;
+}
+
+.well button{
+	position: relative;
+  border: none;
+  padding: 20px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  width: 25%;
+  outline: none;
+  top: -1.2em;										
+}
+
+.btn_{
+	background: #02C2F2;
+  color: #FFF;
+  border: none;
+  box-shadow: 1px 1px 10px 2px #A9A5A5;
+}
+
+.btn_-{
+  background-color: white;
+  color: #02C2F2;
+  border: none;
+  box-shadow: 1px 1px 10px 2px #A9A5A5;
+}
+
+.well button:after {
+	content: "";
+	background: #CCC;
+	display: block;
+	position: absolute;
+	padding-top: 300%;
+	padding-left: 350%;
+	top: 0%;
+	left: -1%;
+	opacity: 0;
+	transition: all 0.8s
+}
+
+.well button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
+.well button:active {
+  transform: translateY(4px);
+}
+
+.volume{
+	width: 20%;
+	display: inline-block; 
+}
+
+.volume span{
+	color: #75868C;
+	font-size: xx-large;
+}
+
+.volume .volume_out{
+	font-size: 1em;
+	display: block;
+}
+
+/*CONFIGURAÇAO DA TEMPERATURA, LOCAL DA IMAGEM*/
+.temp_bathroom, .temp_kitchen, .temp_bedroom, .temp_room{
+background: #F3F2F0;
+height: 8em;
+margin: 0px 0.1% 2%;
+width: 80%;
+position: relative;
+left: 10%;
+box-shadow: 1px 1px 1px 1px #CCC;
+cursor: text;
+}
+
+.temp_bathroom:hover, .temp_kitchen:hover, .temp_bedroom:hover, .temp_room:hover{
+  background-color: #EFECE7;
+}
+
+.temp_bathroom .icon_celsius,
+.temp_kitchen .icon_celsius,
+.temp_bedroom .icon_celsius,
+.temp_room .icon_celsius{
+position: relative;
+float: left;
+top: 42%;
+font-size: 5rem;
+left: 0;
+color: #10CAEB;
+font-weight: 100;
+}
+
+.temp_bathroom span,
+.temp_kitchen span,
+.temp_bedroom span,
+.temp_room span{
+float: left;
+position: relative;
+top: 10%;
+font-size: 2rem;
+color: #10CAEB;
+left: -25%;
+font-weight: 100;
+}
+
+.temp_bathroom img,
+.temp_kitchen img,
+.temp_bedroom img,
+.temp_room img{
+float: right;
+position: relative;
+top: 25%;
+left: -13%;
+height: 60%;
+width: 25%;
+}
+
+.temp_bathroom .tmper,
+.temp_kitchen .tmper,
+.temp_bedroom .tmper,
+.temp_room .tmper{
+  float: left;
+  position: relative;
+  top: 42%;
+  font-size: 5rem;
+  color: #10CAEB;
+  left: 0%;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+}
+
+/*field curtain functions*/
+.curtain_field{
+width: 100%;
+border-radius: 1em;
+}
+
+/*field curtain function*/
+.curtain_space input{
+  position: relative;
+  left: 18%;
+  width: 60%;
+  padding: 1%;
+  margin: 2%;
+  height: 25em;
+  outline: none;
+  box-shadow: 0px 10px 10px 0px #CCC;
+}
+
+/**/
+.curtain_space figcaption{
+width: 60%;
+position: relative;
+left: 13%;
+margin: 5%;
+}
+
+#lampe{
+opacity: 0;
+}
+
+.container{
+height: 82%;
+width: auto;
+}
+
+.row1{
+width: 70%;
+height: 37%;
+position: relative;
+left: 15%;
+margin: 5.5% 0% 0% 0.5%;
+padding: 0;
+display: inline-block;
+}
+
+.row2{
+width: 70%;
+height: 37%;
+position: relative;
+left: 15%;
+margin: 0% 0% 0% 0.5%;
+padding: 0;
+}
+
+.temp{
+background-color: #02C2F2;
+height: 100%;
+border: 0.1em solid #F1F1F1;
+transition:.3s;
+}
+
+.temperature{
+height: 100%;
+position: relative;
+left: 0%;
+width: 100%;
+}
+
+.temp:hover .temperature{
+transition: 0.9s;
+transform: scale(1.1,1.1);
+}
+
+.img-thumbnaill_temp{
+position: relative;
+left: 31%;
+height: 70%;
+top: 8%;
+}
+
+.temp_label{
+font-size: 2rem;
+position: relative;
+left: 8%;
+float: left;
+top: 81%;
+margin: auto;
+font-weight: 100;
+}
+
+
+.label_temp_out{
+float: left;
+position: absolute;
+left: 11%;
+top: 15%;
+font-size: 5rem;
+margin: 0;
+color: white;
+padding: 0;
+font-weight: 100;
+}
+
+
+.lab_med{
+position: absolute;
+left: 27%;
+top: 41%;
+font-weight: 100;
+padding: 0;
+margin: 0;
+font-size: 1.5rem;
+}
+
+
+.lamp{
+background: #0165F3;
+height: 100%;
+border: 0.1em solid #F1F1F1;
+}
+
+
+
+.img-thumbnaill_lamps{
+height: 70%;
+position: relative;
+left: 1%;
+margin: auto;
+top: 6%;
+display: block;
+}
+
+
+
+.label_lamp{
+font-size: 2rem;
+position: relative;
+top: 1.25em;
+left: 23%;
+font-weight: 100;
+margin: 0;
+}
+
+
+
+.lamps{
+height: 100%;
+width: 100%;
+}
+
+
+
+.lamp:hover .lamps{
+transition: 0.9s;
+transform: scale(1.1,1.1);
+}
+
+
+
+.curtain{
+height: 100%;
+background: #02C2F2;
+border: 0.1em solid #F1F1F1;
+}
+
+
+.curtains{
+height: 100%;
+width: 100%;
+padding: 0;
+margin: 0;
+}
+
+
+.img-thumbnaill_curtain{
+height: 80%;
+display: block;
+width: 70%;
+position: relative;
+left: 0%;
+margin: auto;
+top: 2%;
+}
+
+
+.label_curtain{
+font-size: 2rem;
+margin: 0;
+position: relative;
+top: 0.8rem;
+left: 34%;
+padding: 0;
+font-weight: 100;
+}
+
+
+.curtain:hover .curtains{
+transition: 0.9s;
+transform: scale(1.1,1.1);
+}
+#status_curtain{
+  position: relative;
+  left: 31%;
+  float: none;
+  top: 1%;
+  background: #fff;
+  padding: 1% 5% 1% 5%;
+  border-radius: 12px;
+  color: #7b9094;
+  font-size: x-large;
+  border: 1px solid #0CCEF0;
+}
+
+
+.tv{
+background: #02C2F2;
+height: 100%;
+border: 0.1em solid white;
+}
+
+
+.tv_suspense{
+height: 100%;
+width: 100%;
+}
+
+
+.label_tv{
+  font-size: xx-large;
+  margin: 0;
+  font-weight: 100;
+  position: relative;
+  top: 3%;
+  left: 25%;
+  padding: 0;
+}
+
+#sts_tv{
+  position: relative;
+  top: 25%;
+  font-size: x-large;
+  left: -3.5%;
+  color: white;
+}
+
+.img-thumbnaill_tv{
+height: 70%;
+    width: 34%;
+    position: relative;
+    left: 10%;
+    top: 15%;
+    display: inline-block;
+}
+
+
+.tv:hover .tv_suspense{
+transition: 0.9s;
+transform: scale(1.1,1.1);
+}
+
+
+.ar_condicionado{
+height: 100%;
+background: #02C2F2;
+border: 0.1em solid white;
+}
+
+
+.ar_suspense{
+height: 100%;
+width: 100%;
+margin: 0;
+padding: 0;
+}
+
+
+.img-thumbnaill_ar{
+height: 80%;
+width: 40%;
+position: relative;
+left: 10%;
+display: inline-block;
+margin: 0;
+padding: 0;ck;
+}
+
+
+.title_temp{
+color: white;
+font-size: 2rem;
+position: relative;
+top:  8%;
+left: 6%;
+font-weight: 100;
+}
+
+
+.label_ar{
+font-size: 2rem;
+font-weight: 100;
+position: relative;
+left: 0%;
+top: 1.5%;
+float: right;
+margin: 0;
+}
+
+
+.ar_condicionado:hover .ar_suspense{
+transition: 0.9s;
+transform: scale(1.1,1.1);
+}
+
+
+
+#temperature_bedroom_front{
+color: white;
+font-size: 5rem;
+position: relative;
+top: -5%;
+left: 22%;
+display: inline-block;
+font-weight: 100;
+}
+
+
+.config{
+background: #02C2F2;
+border: 0.1em solid white;
+height: 100%;
+}
+
+
+.config_suspense{
+height: 100%;
+width: 100%;
+}
+
+
+.img-thumbnaill_config{
+height: 70%;
+width: 70%;
+position: relative;
+left: 11%;
+top: 7%;
+}
+
+.label_config{
+font-size: 2rem;
+font-weight: 100;
+position: relative;
+top: 13.5%;
+left: 13%;
+}
+
+.config:hover .config_suspense{
+transition: 0.9s;
+transform: scale(1.1,1.1);
+}
+
+.cursor{
+cursor: pointer;
+}
+
+@media screen and (max-width: 600px){
+  .titulo-cia {
+    color: #AFAEAE;
+    text-shadow: white 1.9px 0px;
+    position: relative;
+    left: 13%;
+    top: 1rem;
+    width: 60%;
+    font-weight: 100;
+    font-size: 3rem;
+    text-align: -webkit-center;
+  }
+  .temp_bathroom .tmper,
+  .temp_kitchen .tmper,
+  .temp_bedroom .tmper,
+  .temp_room .tmper{
+    top: 53%;
+    font-size: xx-large;
+  }
+  .temp_bathroom .icon_celsius, .temp_kitchen .icon_celsius, .temp_bedroom .icon_celsius, .temp_room .icon_celsius {
+    top: 53%;
+    font-size: xx-large;
+  }
+  .temp_bathroom img, .temp_kitchen img, .temp_bedroom img, .temp_room img {
+    top: 9%;
+  }
+  .temp_bathroom span, .temp_kitchen span, .temp_bedroom span, .temp_room span {
+    left: -38%;
+  }
+  .label_temp_out {
+    top: 15%;
+    font-size: xx-large;
+  }
+  .temp_label {
+    left: 0%;
+  }
+  .lab_med{
+    left: 57%;
+    top: 20%;
+  }
+  .img-thumbnaill_temp {
+    left: 11%;
+    height: 50%;
+    top: 17%;
+    width: 70%;
+  }
+  .label_ar {
+    font-size: x-large;
+    left: -4%%;
+    top: -26.5%;
+  }
+  #temperature_bedroom_front {
+    font-size: xx-large;
+  } 
+  .title_temp {
+    font-size: xx-large;
+    top: -30%;
+    left: 50%;
+  }
+}

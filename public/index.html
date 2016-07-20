@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html  class="no-js" ng-app="appSmart">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>#C.I.A</title>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="style/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/cia.css">
+    <link rel="stylesheet" type="text/css" href="style/dist/fonts/css/cerulean.min.css">
+    <link href="style/style.css" rel="stylesheet">
+      <!-- JavaScript Includes -->
+    <script src="style/JS/vendor/jquery.min.js"></script>
+    <script src="style/JS/button.js"></script>
+    <script src="style/JS/collapse.js"></script>
+    <script src="style/JS/modal.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="style/socketio.js"></script>
+    <script src="style/cia.js"></script>
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries  onload="seti()" -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   
+</head>
+  <body ng-controller="SmartController" ng-init="init()">   
+    <!-- MENU DA PAGINA PRINCIPAL -->
+    <nav class="navbar navbar-default navbar-static-top">
+       <img class="logo" src="img/logo.png">
+        <div class="navbar-header">
+          <h1 class="titulo-cia" title="SMAR HOME AUTOMATED - CASA INTELIGENTE AUTOMATIZADA -            C.I.A">Smart Home Automated</h1>
+        </div>
+    </nav>
+    <!-- MENU DE TODAS AS LAMPADAS - ILUMINACAO-->
+    <div class="container">
+      <div id="myModal_luz" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span></button>
+              <h4 class="modal-title" id="myModalLabel">Controle da Iluminaç&atilde;o</h4>
+                <!--CAMPO DE TODAS AS LAMPADAS-->
+                <article class="campo_lamp_all">  
+                   <div class="row">
+                      <div class="switch">
+                        <input id="cmn-toggle-2" class="cmn-toggle cmn-toggle-round" type="checkbox" 
+                        onclick="controlAllLamps(); sendLamp_All();">
+                        <label id="toogle_all" for="cmn-toggle-2"></label>
+                        <span>Todas</span>
+                      </div>
+                    </div>
+                </article>
+            </div>
+            <div class="modal-body">
+            <!--CAMPO BANHEIRO - LAMPADA-->
+            <article class="campo_funcionalidade">
+              <figure class="lampada1">
+                <label class="label-button"><span>Banheiro</span></label>
+                <input type="image" class="image-responsive image" id="lampbathroom" src="img/leddesligada.png" onclick="acenderLampBathroom(); sendLampBathroom();" title="Banheiro - Lampada">
+               </figure>
+            </article>
+              <!--CAMPO COZINHA - LAMPADA-->
+            <article class="campo_funcionalidade">
+              <figure class="lampada1">
+                  <label class="label-button"><span>Cozinha</span></label>
+                  <input type="image" id="lampkitchen" src="img/leddesligada.png" onclick="acenderLampkitchen(); sendLampKitchen();" title="Lampada Cozinha">
+              </figure>
+            </article>
+              <!--CAMPO QUARTO - LAMPADA-->
+            <article class="campo_funcionalidade">
+              <figure class="lampada1">
+                 <label class="label-button"><span>Quarto</span></label>
+                 <input type="image" id="lampbedroom" src="img/leddesligada.png" onclick="acenderLampbedroom(); sendLampBedroom();" title="Quarto - Lampada">
+              </figure>
+            </article>
+            <!--CAMPO SALA - LAMPADA 1-->
+            <article class="campo_funcionalidade">
+              <figure class="lampada1">
+                <label class="label-button"><span>Sala 1º</span></label>
+                <input type="image" id="lamp1Sala" src="img/leddesligada.png" onclick="acenderLamproomOne(); sendLampRoomOne();" title="SALA - Lampada 1">
+              </figure>
+            </article>
+            <!--CAMPO SALA - LAMPADA 2-->
+            <article class="campo_funcionalidade">
+              <figure class="lampada1">
+                <label class="label-button"><span>Sala 2º</span></label>
+                <input type="image" id="lamp2Sala" src="img/leddesligada.png" onclick="acenderLamproomTwo(); sendLampRoomTwo();" title="SALA - Lampada 2">
+              </figure>
+            </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- MENU DE CONTROLE DA TELEVISAO -->
+    <div id="myModal_tv" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                <span class="glyphicon glyphicon-remove"></span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">Televisão</h4>
+            </div>
+            <div class="modal-body">
+              <article class="campo_funcionalidade_TV cursor">
+                <figure>
+                  <input type="image" id="tv_img" src="img/tvciaOff.png" 
+                  onclick="activeTvCia(); sendTvHome();" title="Televisor">
+                </figure>
+              </article>
+              <div class="collapse" id="collapse_tv">
+                <div class="well">
+                 <button class="btn_-" onclick="decrease(); sendVolume_Decrease();"><i class="glyphicon glyphicon-chevron-down" data-position="icon only"></i></button>
+                 <div class="volume">
+                  <span id="volume_tv">0</span>
+                  <span class="volume_out">Volume</span>
+                 </div>
+                 <button class="btn_" onclick="Increase(); sendVolume_Increase();"><i class="glyphicon glyphicon-chevron-up" data-position="icon only"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- MENU DE CONTROLE DA TEMPERATURA -->
+      <div id="myModaltemp" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span></button>
+              <h4 class="modal-title" id="myModalLabel">Temperatura</h4>
+            </div>
+            <div class="modal-body">
+              <div id="myTabContent2" class="tab-content">
+                    <div class="col-md-12 temp_bathroom">  
+                      <span id="temperature_bathroom" class="tmper">25º</span>
+                      <span class="icon_celsius">C</span>
+                      <span>Banheiro</span>
+                      <img class="img-responsive" src="img/bath_temp.png" alt="banheiro-icon">
+                    </div>
+                    <div class="col-md-12 temp_kitchen">
+                      <span id="temperature_kitchen" class="tmper">25º</span>
+                      <span class="icon_celsius">C</span>
+                      <span>Cozinha</span>
+                      <img src="img/kit_temp.png" alt="cozinha-icon">
+                    </div>
+                    <div class="col-md-12 temp_bedroom">
+                      <span id="temperature_bedroom" class="tmper">25º</span>
+                      <span class="icon_celsius">C</span>
+                      <span>Quarto</span>
+                      <img src="img/bed_temp.png" alt="quarto-icon">
+                    </div>
+                    <div class="col-md-12 temp_room">
+                      <span id="temperature_room" class="tmper">25º</span>
+                      <span class="icon_celsius">C</span>
+                      <span>Sala</span>
+                      <img src="img/room_temp.png" alt="sala-icon">
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--CAMPO CORTINA-->
+        <div id="myModalcortina" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+         <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove">
+              </span></button>
+              <h4 class="modal-title" id="myModalLabel">Cortina</h4>
+            </div>
+            <div class="modal-body">
+             <div id="myTabContent2" class="tab-content">
+               <div class="curtain_field">
+                 <figure class="curtain_space">
+                    <input type="image" id="curtain_img" class="cursor" src="img/cortina-fechada.png" 
+                    onclick="activeCurtain(); sendCurtain();">
+                 </figure>
+               </div>
+               <span id="status_curtain">Cortina Fechada</span>
+             </div>
+            </div>
+           </div>
+          </div>
+        </div>
+        <!-- MENU DE CONTROLE DA TELEVISAO -->
+      <div id="myModal_ar" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                  <span class="glyphicon glyphicon-remove"></span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Ar-Condicionado</h4>
+              </div>
+              <div class="modal-body">
+                <article class="campo_funcionalidade_TV cursor">
+                  <figure>
+                    <input type="image" id="ar_img" src="img/ar_off.png" 
+                    onclick="activeArCia(); sendArHome();">
+                  </figure>
+                </article>
+                <div class="collapse" id="collapse_ar">
+                  <div class="well">
+                   <button class="btn_-" onclick="decrease_ar(); sendVolume_DecreaseAr();"><i class="glyphicon glyphicon-chevron-down" data-position="icon only"></i></button>
+                   <div class="volume">
+                    <span id="volume_ar">0</span>
+                    <span class="volume_out">Volume</span>
+                   </div>
+                   <button class="btn_" onclick="Increase_ar(); sendVolume_IncreaseAr();"><i class="glyphicon glyphicon-chevron-up" data-position="icon only"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--PAINEL PRINCIPAL DO SITE-->
+          <div class="col-md-12 row1 cursor">
+            <!--Lampada-->
+            <div class="col-md-3 lamp" data-toggle="modal" data-target="#myModal_luz" title="Ilumina&ccedil;&atilde;o">
+             <div class="lamps">
+             <img src="img/ledicone.png" class="img-thumbnaill_lamps">
+               <label class="label label_lamp">Iluminação</label>
+             </div>
+            </div>
+            <!--Temperatura-->
+            <div class="col-md-6 temp" data-toggle="modal" data-target="#myModaltemp" title="Temperatura">
+             <div class="temperature">
+              <label class="label temp_label">Temperatura</label>
+              <span id="temperature_media" class="label label_temp_out">23°C</span><span class="label lab_med">Média</span>
+              <img src="img/tempicone.png" class="img-thumbnaill_temp"> 
+             </div>  
+            </div>
+            <!--Cortina-->
+            <div class="col-md-3 curtain" data-toggle="modal" data-target="#myModalcortina" title="Cortina">
+             <div class="curtains">
+               <img src="img/cortinaaberta.png" class="img-thumbnaill_curtain">
+               <label class="label label_curtain">Cortina</label>
+             </div>
+            </div>
+          </div>
+            <!--Televisão-->
+          <div class="col-md-12 row2 cursor label_weight">
+            <div class="col-md-6 tv" data-toggle="modal" data-target="#myModal_tv" title="Multim&iacute;dia">
+              <div class="tv_suspense">
+                <img src="img/tvicone.png" class="img-thumbnaill_tv">
+                <label class="label label_tv">Televisão</label>
+                <span id="sts_tv">Desligada</span>
+              </div>
+            </div>
+            <!--Ar-Condicionado-->
+            <div class="col-md-6 ar_condicionado" data-toggle="modal" data-target="#myModal_ar"  title="Ar-Condicionado">
+              <div class="ar_suspense">
+                <img src="img/ar_icone.png" class="img-thumbnaill_ar">
+                <span id="temperature_bedroom_front">21°C</span>
+                <span class="title_temp">Quarto</span>
+                <label class="label label_ar">Ar-Condicionado</label>
+              </div>
+            </div> 
+          </div>
+      </div>
+      <script src="style/JS/html5.js"></script>
+      <script src="style/JS/respond.js"></script>
+  </body>
+</html>
