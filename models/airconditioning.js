@@ -19,12 +19,12 @@ exports.control_ar = function () {
   if (status_ar == 0) {
     status_ar = 1;
     console.log("LIGOU O AR");
-    app.sensors.active_ar.digitalWrite(0);
+    app.sensors.active_ar.digitalWrite(1);
     //sendNumber("ligarAr");
   } else {
     status_ar = 0;
     console.log("DESLIGOU O AR");
-    app.sensors.active_ar.digitalWrite(1);
+    app.sensors.active_ar.digitalWrite(0);
     //sendNumber("desligarAr");
   }
 }
