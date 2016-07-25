@@ -7,20 +7,20 @@ exports.controlMotor = function(){
   if(motor === 0){
     motor = 1;
     console.log("Abriu a cortina!!!");
-    /*exec('node stepper_left.js', function(err, stdout, stderr){
+    exec('node stepper_left.js', function(err, stdout, stderr){
       if(err){
   	    console.log(err);
       }
-    });*/
+    });
     temp_motor = 1;
   }else {
     motor = 0;
     console.log("Fechou a cortina!!!");
-   /* exec('node stepper_right.js', function(err, stdout, stderr){
+    exec('node stepper_right.js', function(err, stdout, stderr){
       if(err){
     	 console.log(err);
       }
-    });*/
+    });
     temp_motor = 1;
   }
   setTimeout(function(){

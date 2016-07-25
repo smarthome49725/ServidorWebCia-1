@@ -32,6 +32,8 @@ exports.control_ar = function () {
 exports.increase = function () {
   if (volume < 26) {
     volume++;
+    app.sensors.ar_Volume.digitalWrite(1);
+    app.sensors.ar_Volume.digitalWrite(0);
     //sendNumber("aumentar");
   }
   console.log("Aumentou volume ar " + volume);
@@ -40,6 +42,8 @@ exports.increase = function () {
 exports.decrease = function () {
   if (volume > 17) {
     volume--;
+    app.sensors.ar_Volume.digitalWrite(1);
+    app.sensors.ar_Volume.digitalWrite(0);
     //sendNumber("diminuir");
   }
   console.log("Diminuiu volume ar " + volume);
@@ -79,7 +83,7 @@ exports.socket_AR = function () {
         app.ar_decrease();
       }
 
-      client.broadcast.emit("ar_volume", ar_volume);
+       client.broadcast.emit("ar_volume", ar_volume);
     });
   });
 };

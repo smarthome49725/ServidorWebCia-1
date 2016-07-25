@@ -1,11 +1,11 @@
 {
   "project": {
-    "projectSettingsVersion": "2.0.0",
+    "projectSettingsVersion": "3.0.0",
     "creationData": {
       "projectTypeName": "com.intel.xdk.projecttype.iotapp",
       "src": "iotapp/iotapp-template-blank-iot/sample.zip",
       "projectGuid": "3ddd5ee5-a9b5-4438-97e8-2dea3a7fffcf",
-      "lastModifiedDate": 1460045474446,
+      "lastModifiedDate": 1469207361387,
       "creationDate": 1460045474338
     },
     "sourceDirectory": "",
@@ -14,7 +14,15 @@
     "gameMetadata": {},
     "startFile": "main.js",
     "projectTags": [],
-    "projectFiles": {},
+    "projectFiles": {
+      "xdk-publish-meta-data.json": {
+        "settings": {
+          "project": {
+            "XDK-not-deployed": "True"
+          }
+        }
+      }
+    },
     "projectDirectories": {
       "xdk": {
         "settings": {
@@ -52,6 +60,7 @@
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
+        "certificateId_": "H7941kNGW0u7Os35Y-Pj5g2",
         "appVersion_": "0.0.1",
         "appVersionCode_": "1",
         "crosswalkVersion_": "14",
@@ -81,6 +90,7 @@
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
+        "certificateId_": "H7941kNGW0u7Os35Y-Pj5g2",
         "appVersion_": "0.0.1",
         "appVersionCode_": "1",
         "crosswalkVersion_": "14",
@@ -91,8 +101,8 @@
         "runtime_": "Cordova 3.x",
         "name_": "iOS",
         "preferences_": {
-          "ios-target": "6",
-          "ios-configuration": "adhoc"
+          "ios-configuration": "adhoc",
+          "deployment-target": "6"
         },
         "isActive_": true,
         "appName_": "SmartHome",
@@ -109,6 +119,7 @@
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
+        "certificateId_": "",
         "appVersion_": "0.0.1",
         "cordovaCLIVersion_": "5.1.1",
         "iosProvs_": []
@@ -133,11 +144,15 @@
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
+        "certificateId_": "",
         "appVersion_": "0.0.0.1",
         "cordovaCLIVersion_": "5.1.1"
       }
     },
     "testDirectory": "test",
     "servicesUglifyGeneratedCode": false
+  },
+  "iot-tab": {
+    "killDelay": "1000"
   }
 }
